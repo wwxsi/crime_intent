@@ -134,6 +134,10 @@ public class CrimeListFragment extends Fragment {
             mCrimes = crimes;
         }
 
+        public void setCrimes(List<Crime> crimes) {
+            mCrimes = crimes;
+        }
+
         @NonNull
         @Override
         public CrimeHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -159,6 +163,7 @@ public class CrimeListFragment extends Fragment {
             mAdapter = new CrimeAdapter(crimes);
             mCrimeRecyclerView.setAdapter(mAdapter);
         } else {
+            mAdapter.setCrimes(crimes);
             mAdapter.notifyDataSetChanged();
         }
 
